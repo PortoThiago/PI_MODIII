@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+    <head>
+        <title>HOME</title>
+    </head>
+
+    <body>
+
+        <div class="text-center m-3 mx-auto">
+            <header th:insert="navbar.html :: nav"></header>
+        </div>
+
+        <div> <h1>Bem-Vindo ao Gerenciador de Produtos</h1></div>
+
+        <div> <h3>Aqui você pode cadastrar produtos novos través do botão cadastro e para 
+                vizualzação edição e exclusão de Pordutos acesse a páfina Lista de Produtos
+                através do botão Listar</h3></div>
+
+        <div> 
+            <button><a th:href="@{/cadastroProduto}" class="button">Cadastrar Produtos</a></button>
+            <button><a th:href="@{/listaProduto}" class="button">Lista de Produtos</a></button>
+        </div>
+
+        <footer>
+            Telefone:(xx)xxxxx-xxxx
+            E-mail: xxx@gmail.com
+
+        </footer>
+    </body>
+
+</html>
