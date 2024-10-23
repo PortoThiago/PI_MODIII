@@ -4,43 +4,70 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Lista de Produtos</title>
-    
-</head>
-<body>
-    <h1>Nesta página estão listados todos os produtos cadastrado.</h1>
-    
-    <div class="text-center m-3 mx-auto">
+    <head>
+        <title>Lista de Produtos</title>
+        <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
+    </head>
+    <body>
+        <div class="text-center m-3 mx-auto">
             <header th:insert="navbar.html :: nav"></header>
-        </div>
-    <div>
+       </div>     
+<main>
+        
+        <div class="row">
+            <div class="col-md-8 mx-auto">
                 <h1>Lista de Filmes</h1>
-                <table border="1">
-                    <thead>
+                
+                <p>Nesta página estão presentes todos os produtos cadastrado. Se deseja
+                    alterar ou excluir algum bastar clicar nos botões ao lado do Produto!
+                </p>
+                
+                <table class="table mx-auto">
+                    <thead class="thead-dark">
                         <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Preço</th>
-                            <th>Quantidade</th>
-                            <th>Descrição/Observação</th>
-                            
+                            <th scope="col" class="px-4">ID</th>
+                            <th scope="col" class="px-4">Nome</th>
+                            <th scope="col" class="px-4">Preço</th>
+                            <th scope="col" class="px-4">Quantidade</th>
+                            <th scope="col" class="px-4">Descrição/Observação</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td class="px-4"></td>
+                            <td class="px-4"></td>
+                            <td class="px-4"></td>
+                            <td class="px-4"></td>
+                            <td class="px-4"></td>
                             <td>
-                                <button>Atualizar</button>
-                                <button>Excluir</button>
+                                <a class="btn btn-primary" th:href="@{/atualizarProduto}">Atualizar</a>
+                                <button class="btn btn-danger">Excluir</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+
+                          </div>
+        </div>
+</main>
+        <footer class="py-4 py-md-5 mt-5" style="background-color: #e3f2fd;">
+            <div class="row">
+                <div class="col text-center mt-2">
+                    <h4 class="fs-1">Contatos:</h4>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <p class="mb-0 me-5" style="margin-right: 50px;">
+                            Telefone: (xx) xxxxx-xxxx
+                        </p>
+                        <p class="mb-0 me-5" style="margin-right: 50px;">
+                            E-mail: xxxxx@gmail.com
+                        </p>
+                        <img src="/img/instagram.svg" id="instagram" alt="Logo Instagram" style="width: 30px; height: 30px; margin-right: 40px;"></img>
+                        <img src="/img/facebook.svg" id="face" alt="Logo Facebook" style="width: 30px; height: 30px;"></img>
+                    </div>
+                </div>
             </div>
-</body>
+
+        </footer>
+    </body>
 </html>

@@ -6,6 +6,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
     <head>
         <title>Cadastro De Produto</title>
+        <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
     </head>
 
     <body>
@@ -13,31 +14,54 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <div class="text-center m-3 mx-auto">
             <header th:insert="navbar.html :: nav"></header>
         </div>
+        <main>
+            <div class="row">
+                <div class=" text-center mx-auto border border-black ">
 
-        <div> <h1>Cadastro de Produto</h1></div>
+                    <h2>Cadastro de Produtos</h2> 
 
-        <div> <h2>Preencha as informações do formulário para salvar o produto.</h2></div>
-        
-        <div>
-                    <h3>Cadastro de Filme</h3> 
-                <form >
-                    <p>Nome: <input type="text" placeholder="Insira um Nome"/> </p>
-                    
-                    <p>Preço: <input type="text" placeholder="Insira uma Preço"/></p> 
-                    
-                    <p>Quantidade: <input type="text" placeholder="Insira a Quantidade"/></p>
-                    
-                    <p>Descrição/Observação: <input type="text" placeholder="Insira Descrição/Observação"/></p> 
-                    
-                    <button type="submit">Enviar</button> 
-                </form> 
-            
-        
-    </div>
-   
-        <footer>
-            Telefone:(xx)xxxxx-xxxx
-            E-mail: xxx@gmail.com
+                    <p>Nestá pagina é feito o cadastro dos produtos, basta informar todos os dados a baixo:</p>
+                    <form>
+                        <div class="mx-auto">
+                            <p>Nome:</p> 
+                            <p> <input type="text" placeholder="Insira um Produto"/> </p> 
+                        </div>
+
+                        <div class="mx-auto">
+                            <p>Preço:</p> 
+                            <p><input type="text" placeholder="Insira um Preço"/> </p> 
+                        </div>
+                        <div class="mx-auto">
+                            <p>Quantidade:</p> 
+                            <p><input type="text" placeholder="Insira a quantidade"/> </p>
+                        </div>
+                        <div class="mx-auto">
+                            <p>Descrição/Observação</p> 
+                            <p><textarea placeholder="Insira a Descrição/Observação" rows="5"></textarea>  </p> 
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Enviar</button> 
+                    </form> 
+
+                </div>
+            </div>
+        </main>
+        <footer class="py-4 py-md-5 mt-5" style="background-color: #e3f2fd;">
+            <div class="row">
+                <div class="col text-center mt-2">
+                    <h4 class="fs-1">Contatos:</h4>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <p class="mb-0 me-5" style="margin-right: 50px;">
+                            Telefone: (xx) xxxxx-xxxx
+                        </p>
+                        <p class="mb-0 me-5" style="margin-right: 50px;">
+                            E-mail: xxxxx@gmail.com
+                        </p>
+                        <img src="/img/instagram.svg" id="instagram" alt="Logo Instagram" style="width: 30px; height: 30px; margin-right: 40px;"></img>
+                        <img src="/img/facebook.svg" id="face" alt="Logo Facebook" style="width: 30px; height: 30px;"></img>
+                    </div>
+                </div>
+            </div>
 
         </footer>
     </body>
