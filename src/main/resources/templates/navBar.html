@@ -6,13 +6,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Menu de Navegação</title>
+        <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
     </head>
     <body>
-        <nav>
-            <a th:href="@{/}">HOME</a>
-            <a th:href="@{/cadastroProduto}">Cadastro de Produtos</a>   
-            <a th:href="@{/listaProduto}">Lista de Produtos</a>
-        </nav>
-        
+    
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav" >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/}">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/cadastroProduto}">CADASTRO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/listaProduto}">LISTA</a>
+        </li>
+       </ul>
+    </div>
+  </div>
+</nav>
     </body>
 </html>

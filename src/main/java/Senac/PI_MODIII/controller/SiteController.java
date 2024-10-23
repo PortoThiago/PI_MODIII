@@ -28,4 +28,9 @@ public class SiteController {
     public String listaProduto(){
         return "listaProduto";
     }
+    
+     @GetMapping("/atualizarProduto")
+    public String atualizarProduto(){
+        return "atualizar";
+    }
 }

@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
 -->
+
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
-    <head>
-        <title>HOME</title>
+<head>
+        <title>Aualizar Produto</title>
         <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
     </head>
 
     <body>
 
-
-        <div>
+        <div class="text-center m-3 mx-auto">
             <header th:insert="navbar.html :: nav"></header>
         </div>
-
         <main>
             <div class="row">
-                <div class="col-4 container border border-dark text-center mt-3 "> 
+                <div class=" text-center mx-auto border border-black ">
 
-                    <h3 class="mb-2 mt-2">Bem-Vindo ao Gerenciador de Produtos</h3>
-                    <p class="f-1">Aqui você pode cadastrar produtos novos través do botão cadastro e para 
-                        vizualzação edição e exclusão de Pordutos acesse a páfina Lista de Produtos
-                        através do botão Listar.</p>
-                </div>
-            </div>
+                    <h2>Atualzação de Produtos</h2> 
 
-            <div class="row">
-                <div class="col text-center mt-2"> 
-                    <a class="btn btn-primary" th:href="@{/cadastroProduto}"> Cadastrar Produtos</a>
-                    <a class="btn btn-primary  ms-3" th:href="@{/listaProduto}"> Lista de Produtos</a>
+                    <p>Nestá pagina é pode ser feta a alteração de dados do produtodo:</p>
+                    <form>
+                        <div class="mx-auto">
+                            <p>Nome:</p> 
+                            <p> <input type="text" placeholder="Insira um Produto"/> </p> 
+                        </div>
+
+                        <div class="mx-auto">
+                            <p>Preço:</p> 
+                            <p><input type="text" placeholder="Insira um Preço"/> </p> 
+                        </div>
+                        <div class="mx-auto">
+                            <p>Quantidade:</p> 
+                            <p><input type="text" placeholder="Insira a quantidade"/> </p>
+                        </div>
+                        <div class="mx-auto">
+                            <p>Descrição/Observação</p> 
+                            <p><textarea placeholder="Insira a Descrição/Observação" rows="5"></textarea>  </p> 
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Enviar</button> 
+                    </form> 
 
                 </div>
             </div>
         </main>
-
         <footer class="py-4 py-md-5 mt-5" style="background-color: #e3f2fd;">
             <div class="row">
                 <div class="col text-center mt-2">
