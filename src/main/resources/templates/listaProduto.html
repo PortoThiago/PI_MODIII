@@ -42,7 +42,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             <td class="px-4"></td>
                             <td>
                                 <a class="btn btn-primary" th:href="@{/atualizarProduto}">Atualizar</a>
-                                <button class="btn btn-danger">Excluir</button>
+                                <button class="btn btn-danger" onclick="return ValidarExcluir();">Excluir</button>
                             </td>
                         </tr>
                     </tbody>
@@ -69,5 +69,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </div>
 
         </footer>
+        
+        <script src="js/validacao.js"></script>
     </body>
 </html>
