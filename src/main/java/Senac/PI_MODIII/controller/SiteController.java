@@ -18,19 +18,5 @@ public class SiteController {
     public String index() {
         return "index"; 
     }
-    
-    @GetMapping("/cadastroProduto")
-    public String cadastroProduto(){
-        return "cadastroProduto";
-    }
-    
-    @GetMapping("/listaProduto")
-    public String listaProduto(){
-        return "listaProduto";
-    }
-    
-     @GetMapping("/atualizarProduto")
-    public String atualizarProduto(){
-        return "atualizar";
-    }
+   
 }
