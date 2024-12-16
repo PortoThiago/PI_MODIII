@@ -23,7 +23,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     <h2>Cadastro de Produtos</h2> 
 
                     <p>Nestá pagina é feito o cadastro dos produtos, basta informar todos os dados a baixo:</p>
-                    <form id="formulario" onsubmit="return validarForm()">
+                    <form id="formulario" onsubmit="return validarForm()" th:action="@{/salvarProduto}" th:object="${produto}" method="POST">
                         <div class="mx-auto">
                             <p>Produto:</p> 
                             <p> <input type="text" placeholder="Insira um Produto" class="form-control" id="produto"/> </p>
@@ -42,8 +42,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             <p>Descrição/Observação</p> 
                             <p><textarea placeholder="Insira a Descrição/Observação" rows="5" class="form-control"  id="descricao"></textarea>  </p> 
                         </div>
-
-                        <button class="btn btn-primary" type="submit">Enviar</button> 
+                        <button onclick= "return confirm('deseja salvar o filme?')" class="btn btn-primary" type="submit">Enviar</button> 
+                        
                     </form> 
 
                 </div>
