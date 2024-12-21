@@ -11,46 +11,46 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <body>
         <div class="text-center m-3 mx-auto">
             <header th:insert="navbar.html :: nav"></header>
-       </div>     
-<main>
-        
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <h1>Lista de Filmes</h1>
-                
-                <p>Nesta página estão presentes todos os produtos cadastrado. Se deseja
-                    alterar ou excluir algum bastar clicar nos botões ao lado do Produto!
-                </p>
-                
-                <table class="table mx-auto">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col" class="px-4">ID</th>
-                            <th scope="col" class="px-4">Nome</th>
-                            <th scope="col" class="px-4">Preço</th>
-                            <th scope="col" class="px-4">Quantidade</th>
-                            <th scope="col" class="px-4">Descrição/Observação</th>
+        </div>     
+        <main>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="px-4"></td>
-                            <td class="px-4"></td>
-                            <td class="px-4"></td>
-                            <td class="px-4"></td>
-                            <td class="px-4"></td>
-                            <td>
-                                <a class="btn btn-primary" th:href="@{/atualizarProduto}">Atualizar</a>
-                                <button class="btn btn-danger" onclick="return ValidarExcluir();">Excluir</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h1>Lista de Produtos</h1>
 
-                          </div>
-        </div>
-</main>
+                    <p>Nesta página estão presentes todos os produtos cadastrado. Se deseja
+                        alterar ou excluir algum bastar clicar nos botões ao lado do Produto!
+                    </p>
+
+                    <table class="table mx-auto">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" class="px-4">ID</th>
+                                <th scope="col" class="px-4">Nome</th>
+                                <th scope="col" class="px-4">Preço</th>
+                                <th scope="col" class="px-4">Quantidade</th>
+                                <th scope="col" class="px-4">Descrição/Observação</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="produto : ${listaProduto}">
+                                <td class="px-4" th:text="${produto.id}"></td>
+                                <td class="px-4" th:text="${produto.titulo}"></td>
+                                <td class="px-4" th:text="${produto.preco}"></td>
+                                <td class="px-4" th:text="${produto.quantidade}"></td>
+                                <td class="px-4" th:text="${produto.observacao}"></td>
+                                <td class="px-4">
+                                    <a th:href="@{/atualizarProdutoForm/{id}(id=${produto.id})}" class="btn btn-primary">Atualizar</a>
+                                    <a th:href="@{/deletarProduto/{id}(id=${produto.id})}" onclick="return ValidarExcluir()" class="btn btn-danger">Excluir</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </main>
         <footer class="py-4 py-md-5 mt-5" style="background-color: #e3f2fd;">
             <div class="row">
                 <div class="col text-center mt-2">
@@ -69,7 +69,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </div>
 
         </footer>
-        
+
         <script src="js/validacao.js"></script>
     </body>
 </html>
