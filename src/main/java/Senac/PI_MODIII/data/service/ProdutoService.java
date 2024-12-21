@@ -31,9 +31,9 @@ public class ProdutoService {
     public ProdutoEntity atualizarProduto(Integer produtoId, ProdutoEntity produtoRequest) {
         ProdutoEntity produto = getProdutoId(produtoId);
         produto.setTitulo(produtoRequest.getTitulo());
-        produto.setPreço(produtoRequest.getPreço());
+        produto.setPreco(produtoRequest.getPreco());
         produto.setQuantidade(produtoRequest.getQuantidade());
-        produto.setObservação(produtoRequest.getObservação());
+        produto.setObservacao(produtoRequest.getObservacao());
         
         ProdutoRepository.save(produto);
         return produto;

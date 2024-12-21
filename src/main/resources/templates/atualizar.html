@@ -5,7 +5,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 -->
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
-<head>
+    <head>
         <title>Aualizar Produto</title>
         <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
     </head>
@@ -19,29 +19,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <div class="row">
                 <div class=" text-center mx-auto border border-black ">
 
-                    <h2>Atualzação de Produtos</h2> 
+                    <h2>Atualização de Produtos</h2> 
 
                     <p>Nestá pagina é pode ser feta a alteração de dados do produtodo:</p>
-                    <form id="form-atualizar" onsubmit="return validarAtualizar();">
+                    <form id="form-atualizar" th:action="@{/salvarProduto}" th:object="${produto}" method="POST">
                         <div class="mx-auto">
+                            <input type="hidden" th:field="*{id}" />
+
                             <p>Nome:</p> 
-                            <p> <input type="text" placeholder="Insira um Produto"/> </p> 
+                            <p> <input type="text" placeholder="Insira um Produto" th:field="*{titulo}"/> </p> 
                         </div>
 
                         <div class="mx-auto">
                             <p>Preço:</p> 
-                            <p><input type="text" placeholder="Insira um Preço"/> </p> 
+                            <p><input type="text" placeholder="Insira um Preço" th:field="*{preco}"/> </p> 
                         </div>
                         <div class="mx-auto">
                             <p>Quantidade:</p> 
-                            <p><input type="text" placeholder="Insira a quantidade"/> </p>
+                            <p><input type="text" placeholder="Insira a quantidade" th:field="*{quantidade}"/> </p>
                         </div>
                         <div class="mx-auto">
                             <p>Descrição/Observação</p> 
-                            <p><textarea placeholder="Insira a Descrição/Observação" rows="5"></textarea>  </p> 
+                            <p><textarea placeholder="Insira a Descrição/Observação" th:field="*{observacao}" rows="5"></textarea>  </p> 
                         </div>
 
-                        <button class="btn btn-primary"  type="submit">Enviar</button> 
+                        <button class="btn btn-primary"  onclick="return validar();" type="submit">Enviar</button> 
                     </form> 
 
                 </div>
@@ -65,7 +67,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </div>
 
         </footer>
-        
+
         <script src="js/validacao.js"></script>
     </body>
 

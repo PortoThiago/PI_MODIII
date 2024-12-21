@@ -30,7 +30,7 @@ public class FuncController {
     @GetMapping("/deletarProduto/{id}")
     public String deletarFilme(@PathVariable(value = "id") Integer id) {
         produtoService.deletarProduto(id);
-        return "listaProduto";
+        return "redirect:/listaProduto";
     }
 
     @GetMapping("/cadastroProduto")
@@ -42,7 +42,7 @@ public class FuncController {
 
     @GetMapping("/listaProduto")
     public String listarProdutoForm(Model model) {
-        model.addAttribute("listarProdutod", produtoService.listarTodosProdutos());
+        model.addAttribute("listaProduto", produtoService.listarTodosProdutos());
         return "listaProduto";
     }
 
@@ -54,15 +54,19 @@ public class FuncController {
         }
         if (produto.getId() == null) {
             produtoService.cadastrarProduto(produto);
+             model.addAttribute("mensagem", "Produto cadastrado com sucesso!");
         } else {
+            
             produtoService.atualizarProduto(produto.getId(), produto);
+            model.addAttribute("mensagem", "Produto atualizado com sucesso!");
 
         }
-        return "redirect:/";
+        
+        return "redirect:/listaProduto";
     }
 
     @GetMapping("/atualizarProdutoForm/{id}")
-    public String atualizarFilmeForm(@PathVariable(value = "id") Integer id, Model model) {
+    public String atualizarProdutoForm(@PathVariable(value = "id") Integer id, Model model) {
         ProdutoEntity produto = produtoService.getProdutoId(id);
         model.addAttribute("produto", produto);
         return "atualizar";

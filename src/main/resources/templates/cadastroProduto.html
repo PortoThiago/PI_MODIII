@@ -23,26 +23,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     <h2>Cadastro de Produtos</h2> 
 
                     <p>Nestá pagina é feito o cadastro dos produtos, basta informar todos os dados a baixo:</p>
-                    <form id="formulario" onsubmit="return validarForm()" th:action="@{/salvarProduto}" th:object="${produto}" method="POST">
+                    <form id="formulario" th:action="@{/salvarProduto}" th:object="${produto}" method="POST">
                         <div class="mx-auto">
                             <p>Produto:</p> 
-                            <p> <input type="text" placeholder="Insira um Produto" class="form-control" id="produto"/> </p>
+                            <p> <input type="text" placeholder="Insira um Produto" class="form-control" id="produto" th:field="*{titulo}"/> </p>
                             <span class="text-danger" ></span>
                         </div>
 
                         <div class="mx-auto">
                             <p>Preço:</p> 
-                            <p><input type="text" placeholder="Insira um Preço" class="form-control" id="preco"/> </p> 
+                            <p><input type="text" placeholder="Insira um Preço" class="form-control" id="preco" th:field="*{preco}"/> </p> 
                         </div>
                         <div class="mx-auto">
                             <p>Quantidade:</p> 
-                            <p><input type="text" placeholder="Insira a quantidade" class="form-control"  id="quantidade"/> </p>
+                            <p><input type="text" placeholder="Insira a quantidade" class="form-control"  id="quantidade" th:field="*{quantidade}"/> </p>
                         </div>
                         <div class="mx-auto">
                             <p>Descrição/Observação</p> 
-                            <p><textarea placeholder="Insira a Descrição/Observação" rows="5" class="form-control"  id="descricao"></textarea>  </p> 
+                            <p><textarea placeholder="Insira a Descrição/Observação" rows="5" class="form-control"  id="descricao" th:field="*{observacao}"></textarea>  </p> 
                         </div>
-                        <button onclick= "return confirm('deseja salvar o filme?')" class="btn btn-primary" type="submit">Enviar</button> 
+                        <button class="btn btn-primary"  onclick="return validarForm();" type="submit">Enviar</button> 
                         
                     </form> 
 

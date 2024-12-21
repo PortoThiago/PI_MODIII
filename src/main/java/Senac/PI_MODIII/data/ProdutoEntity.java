@@ -31,12 +31,12 @@ public class ProdutoEntity {
     private String titulo;
     
     @NotBlank @NotNull (message="o campo Preço não pode ser nulo")
-    private String Preço;
+    private String Preco;
     
     @NotBlank @NotNull (message="o campo Quantidade não pode ser nulo")
     private String quantidade;
     
-    private String Observação;
+    private String Observacao;
     
     
 }
